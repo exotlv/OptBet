@@ -66,6 +66,10 @@ class LoginPage:
         logout_button = self.driver.find_element_by_xpath(xpath)
         logging.info("# Clicking Logout button")
         logout_button.click()
+        xpath = self.xpathLoginButton
+        self.services.wait_for_element(xpath)
+        login_button = self.driver.find_element_by_xpath(xpath)
+        logging.info("# Checking element: %s" % login_button)
 
     def check_login_validation(self):
         """
